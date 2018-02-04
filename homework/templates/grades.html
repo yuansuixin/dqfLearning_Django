@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>grades</title>
+</head>
+<body>
+<h1>班级信息</h1>
+<table border="1" style="background: greenyellow">
+    <thead>
+            <th>班级</th>
+            <th>数量</th>
+            <th>成立日期</th>
+    </thead>
+    <tbody>
+          {% for grade in grades %}
+              <tr>
+                  <td><a href={{ grade.g_name }}>{{ grade.g_name }}</a></td>
+               <td>{{ grade.g_num }}</td>
+               <td>{{ grade.g_date }}</td>
+              </tr>
+      {% endfor %}
+    </tbody>
+
+</table>
+
+
+</body>
+</html>

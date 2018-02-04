@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加学生</title>
+</head>
+<body>
+<h1>添加学生</h1>
+<form action="/myapp/addstusuccess/"method="post">
+    {% csrf_token %}
+    姓名：<input type="text"name="s_name"><br/>
+    年龄：<input type="number"name="s_age"><br/>
+    性别：<input type="radio"name="s_gender"checked="checked">男
+    <input type="radio"name="s_gender">女<br/>
+    班级：<input type="text"name="s_grade"><br/>
+    <br/>
+    <input type="submit" value="提交">
+</form>
+
+</body>
+</html>

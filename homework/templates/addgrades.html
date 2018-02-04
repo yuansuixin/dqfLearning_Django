@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加班级</title>
+</head>
+<body>
+<h1>添加班级信息</h1>
+<form action="/myapp/addgradessuccess/"method="post">
+    {% csrf_token %}
+    班级名称：<input type="text"name="g_name"><br/>
+    班级创建时间：<input type="date"name="g_date"><br/>
+    班级人数：<input type="number"name="g_num"><br/>
+    <br/>
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>

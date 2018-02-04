@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>students</title>
+</head>
+<body>
+<h1>学生信息</h1>
+<table border="1" style="background: greenyellow">
+    <thead>
+    <th>姓名</th>
+    <th>性别</th>
+    <th>年龄</th>
+    <th>班级</th>
+    <th>删除</th>
+    </thead>
+    <tbody>
+    {% for student in students %}
+
+        {#        {% if student.isdelete %}#}
+        {#            <tr>该学生已删除</tr>#}
+        {#        {% else %}#}
+        {#        {% for index in students.paginator.page_range %}#}
+        <tr>
+            <td>{{ student.s_name }}</td>
+            <td>{{ student.gender }}</td>
+            <td>{{ student.s_age }}</td>
+            <td><a href={{ student.s_grade.g_name }}>{{ student.s_grade }}</a></td>
+            <td><a href={% url 'app:del' %}>删除</a></td>
+        </tr>
+    {% empty %}
+        <h2>现在还没有学生</h2>
+    {% endfor %}
+    </tbody>
+
+</table>
+
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1" style="background: greenyellow">
+    <thead>
+    <th>姓名</th>
+    <th>性别</th>
+    <th>年龄</th>
+    <th>班级</th>
+    </thead>
+    <tbody>
+    {% for student in students %}
+
+        {#        {% if student.isdelete %}#}
+        {#            <tr>该学生已删除</tr>#}
+        {#        {% else %}#}
+        {#        {% for index in students.paginator.page_range %}#}
+        <tr>
+            <td>{{ student.s_name }}</td>
+            <td>{{ student.gender }}</td>
+            <td>{{ student.s_age }}</td>
+            <td><a href={{ student.s_grade.g_name }}>{{ student.s_grade }}</a></td>
+        </tr>
+    {% empty %}
+        <h2>现在还没有学生</h2>
+    {% endfor %}
+    </tbody>
+
+</table>
+<ul>
+{% for index in students.paginator.page_range %}
+    {% if index == students.number %}
+        <li>{{ index }}</li>
+    {% else %}
+        <li>
+            <a href="/myapp/pagestu/{{ index }}/">{{ index }}</a>
+        </li>
+    {% endif %}
+{% endfor %}
+</ul>
+</body>
+</html>
